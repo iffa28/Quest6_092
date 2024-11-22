@@ -1,6 +1,7 @@
 package com.example.project6.ui.widget
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
@@ -48,7 +49,7 @@ fun DynamicSelectedTextField(
             colors = OutlinedTextFieldDefaults.colors(),
             modifier = Modifier
                 .menuAnchor()
-                .fillMaxSize()
+                .fillMaxWidth()
 
         )
         ExposedDropdownMenu(expanded = expanded,
