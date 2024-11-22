@@ -59,7 +59,8 @@ fun MahasiswaApp(
                 mahasiswa = mahasiswaUiState,
                 onSubmitButtonClicked = {
                     krsViewModel.saveDataKRS(it)
-                    navController.navigate(Halaman.Tampil.name) //navigate
+
+                    navController.navigate(Halaman.Tampil.name) //navigatee
                 },
                 onBackButtonClicked = { navController.popBackStack() }
             )
