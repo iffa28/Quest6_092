@@ -17,4 +17,11 @@ fun DetailData(
     val mahasiswaUiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
     val krsStateUi = krsViewModel.krsStateUi.collectAsState().value
 
+    val listDataMhs = listOf(
+        Pair("Nama", mahasiswaUiState.nama),
+        Pair("Email", mahasiswaUiState.email),
+        Pair("NIM", mahasiswaUiState.nim),
+        Pair("Mata Kuliah", krsStateUi.mataKuliah),
+        Pair("Kelas", krsStateUi.kelas)
+    )
 }
