@@ -138,3 +138,23 @@ fun DetailData(
 
     }
 }
+
+@Composable
+fun CardSection(judulParam: String, isiParam: String) {
+    Column(
+        horizontalAlignment = Alignment.Start,
+        modifier = Modifier.padding(8.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(text = judulParam, modifier = Modifier.weight(0.8f))
+            Text(text = " : ", modifier = Modifier.weight(0.2f))
+            Text(
+                text = "$isiParam",
+                modifier = Modifier.weight(2f)
+            )
+        }
+    }
+}
