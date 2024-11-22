@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -38,7 +39,6 @@ import com.example.project6.R
 import com.example.project6.data.MataKuliah
 import com.example.project6.data.RuangKelas
 import com.example.project6.model.Mahasiswa
-import com.example.project6.model.RencanaStudy
 import com.example.project6.ui.widget.DynamicSelectedTextField
 
 @Composable
@@ -159,6 +159,19 @@ fun RencanaStudyView(
                     Text(text = "Saya Menyetujui setiap pertanyaan yang ada tanpa ada paksaan dari manapun.",
                         fontSize = 10.sp,
                         fontWeight = FontWeight.Light)
+                }
+
+                Spacer(modifier = Modifier.padding(8.dp))
+                Row(modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly)
+                {
+                    Button(onClick = {onBackButtonClicked() }) {
+                        Text(text = "Kembali")
+                    }
+                    Button(onClick = {onSubmitButtonClicked(listData) }) {
+                        Text(text = "Lanjut")
+                    }
+
                 }
 
             }
