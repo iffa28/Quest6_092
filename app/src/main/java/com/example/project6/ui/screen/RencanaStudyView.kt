@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.Icon
@@ -30,8 +31,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.project6.R
+import com.example.project6.data.MataKuliah
 import com.example.project6.model.Mahasiswa
 import com.example.project6.model.RencanaStudy
+import com.example.project6.ui.widget.DynamicSelectedTextField
 
 @Composable
 fun RencanaStudyView(
@@ -82,6 +85,43 @@ fun RencanaStudyView(
                     contentDescription = null,
                     tint = Color.White
                 )
+            }
+
+        }
+        Box(
+            modifier = Modifier
+                .background(
+                    color = Color.White,
+                    shape = RoundedCornerShape(
+                        topStart = 15.dp,
+                        topEnd = 15.dp)
+                )
+                .fillMaxSize(),
+        ){
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+            ){
+                Text(
+                    text = "Pilih Mata Kuliah Peminatan",
+                    fontWeight = FontWeight.Bold,
+                )
+                Text(
+                    text = "Silahkan pilih mata kuliah yang anda inginkan",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Light
+                )
+                Spacer(modifier = Modifier.padding(8.dp))
+                DynamicSelectedTextField(
+                    selectedValue = chosenDropdown,
+                    options = MataKuliah.options,
+                    label = "Mata Kuliah",
+                    onValueChangedEvent = {
+                        chosenDropdown = it
+                    }
+                )
+
             }
 
         }
